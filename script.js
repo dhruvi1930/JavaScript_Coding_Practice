@@ -11,3 +11,17 @@ reverseBtn.addEventListener("click", () => {
   container.append(answerTag);
   inputString.value = "";
 });
+
+// Palindrome String
+const palindromeBtn = document.getElementById("btn-palindrome");
+palindromeBtn.addEventListener("click", () => {
+  const variable = inputString.value;
+  const reverseVariable = variable.split("").reverse().join("");
+  const answerTag = document.createElement("p");
+  answerTag.textContent =
+    variable === reverseVariable
+      ? "Palindrome: String is a palindrome"
+      : "Palindrome: String is not a palindrome";
+  container.append(answerTag);
+  inputString.value = "";
+});
