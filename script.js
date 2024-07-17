@@ -82,3 +82,28 @@ reverseBtnInt.addEventListener("click", () => {
   container.append(answerTag);
   inputString.value = "";
 });
+
+/**write a program to print the screen numbers 1 to n .
+ * For multiple of 3 print fizz,for multiple of 5 print buzz
+ * and for both print fizzbuzz
+ * */
+const inputNumber = document.getElementById("input-number");
+const container2 = document.querySelector(".container-2");
+const generateBtn = document.getElementById("btn-fizzbuzz");
+generateBtn.addEventListener("click", () => {
+  const number = parseInt(inputNumber.value);
+  for (let index = 1; index <= number; index++) {
+    const answerTag = document.createElement("p");
+    if (index % 3 === 0 && index % 5 === 0) {
+      answerTag.textContent = "fizzbuzz";
+    } else if (index % 5 === 0) {
+      answerTag.textContent = "buzz";
+    } else if (index % 3 === 0) {
+      answerTag.textContent = "fizz";
+    } else {
+      answerTag.textContent = index;
+    }
+    container2.append(answerTag);
+  }
+  inputNumber.value = "";
+});
