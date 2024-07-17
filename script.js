@@ -107,3 +107,36 @@ generateBtn.addEventListener("click", () => {
   }
   inputNumber.value = "";
 });
+
+/** write a function 'chunk(arr,n)'
+ * that returns chunked array of size n at the least.
+ * n is less than equal to length of array
+ * example: [1,2,4,6,2,0,9], n= 2
+ * answer: [[1,2],[4,6],[2,0],[9]]
+ * */
+const inputValue = document.getElementById("input-n");
+const container3 = document.querySelector(".container-3");
+const chunkedArray = [1, 7, 34, 67, 3, 7, 3, 8, 8, 3, 2];
+document.getElementById("chunked-array").innerHTML = chunkedArray.join(", ");
+
+const generateChunked = document.getElementById("btn-chunked");
+generateChunked.addEventListener("click", () => {
+  const chunkSize = parseInt(inputValue.value);
+  if (chunkSize <= 0 || chunkSize > chunkedArray.length) {
+    alert("Enter a valid chunk size (1 to " + chunkedArray.length + ")");
+    return;
+  }
+  const chunks = chunkedFun(chunkedArray, chunkSize);
+  const answerTag = document.createElement("p");
+  answerTag.textContent = JSON.stringify(chunks);
+  container3.append(answerTag);
+  inputValue.value = "";
+});
+
+function chunkedFun(array, size) {
+  let result = [];
+  for (let index = 0; index < array.length; index += size) {
+    result.push(array.slice(index, index + size));
+  }
+  return result;
+}
