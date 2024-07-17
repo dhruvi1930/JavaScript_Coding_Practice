@@ -3,57 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Coding Practice</title>
+    <title>JS Practice</title>
     <link
       rel="icon"
       href="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-     <div class="main-container" style="display: flex; flex-direction: column">
-     <!-- String Manipulations -->
-      <div
-        class="container-1"
-        style="border: 1px solid black; padding: 20px; margin-bottom: 10px"
-      >
-        <h1>Coding Practice</h1>
-        <input id="input-string" type="text" />
+    <div class="main-container">
+      <!-- String Mamipulations -->
+      <div class="container container-1">
+        <h1>String Mamipulations</h1>
+        <input id="input-string" type="text" placeholder="Enter a string" />
         <button id="btn-reverse">Reverse</button>
         <button id="btn-palindrome">Palindrome</button>
         <button id="btn-repeat">Repeat Max Char</button>
         <button id="btn-reverse-int">Reverse Integer</button>
-        <button id="btn-unique-string">Is Unique String Char</button>
+        <button id="btn-unique-string">Is Unique</button>
       </div>
-      <!-- Number sequences -->
-        <div
-        class="container-2"
-        style="border: 1px solid black; padding: 20px; margin-bottom: 10px"
-      >
-        <h1>Loop Practice</h1>
-        <input id="input-number" type="number" />
+      <!-- Number Sequences -->
+      <div class="container container-2">
+        <h1>Number Sequences</h1>
+        <input id="input-number" type="number" placeholder="Enter a number" />
         <button id="btn-fizzbuzz">Generate FizzBuzz</button>
       </div>
       <!-- Array Operations -->
-        <div
-        class="container-3"
-        style="border: 1px solid black; padding: 20px; margin-bottom: 10px"
-      >
-        <h1>Chunked Array</h1>
+      <div class="container container-3">
+        <h1>Array Operations</h1>
         <p id="chunked-array"></p>
-        <input id="input-n" type="number" />
+        <input id="input-n" type="number" placeholder="Enter chunk size" />
         <button id="btn-chunked">Generate Chunked Array</button>
       </div>
-       <div
-        class="container-4"
-        style="border: 1px solid black; padding: 20px; margin-bottom: 10px"
-      >
+      <div class="container container-4">
         <h1>Permutation String</h1>
-        String:1 <input id="inputStr1" type="text" /><br /><br />
-        String:2 <input id="inputStr2" type="text" />
+        <p>String 1:</p>
+        <input id="inputStr1" type="text" placeholder="Enter first string" />
+        <p>String 2:</p>
+        <input id="inputStr2" type="text" placeholder="Enter second string" />
         <button class="btn-permutation">Is Permutation</button>
       </div>
     </div>
     <script src="script.js"></script>
-    </body>
   </body>
 </html>
