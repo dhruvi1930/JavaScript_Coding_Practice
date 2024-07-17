@@ -140,3 +140,51 @@ function chunkedFun(array, size) {
   }
   return result;
 }
+
+//Permutation string
+const inputString1 = document.getElementById("inputStr1");
+const inputString2 = document.getElementById("inputStr2");
+const container4 = document.querySelector(".container-4");
+
+const permutationbtn = document.querySelector(".btn-permutation");
+permutationbtn.addEventListener("click", () => {
+  const inputStringValue1 = inputString1.value;
+  const inputStringValue2 = inputString2.value;
+
+  const result = arePermutations(inputStringValue1, inputStringValue2);
+  console.log(result);
+  const answerTag = document.createElement("p");
+  answerTag.textContent = result;
+  container4.append(answerTag);
+  inputString1.value = "";
+  inputString2.value = "";
+});
+
+function arePermutations(str1, str2) {
+  // Check if lengths are different
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  // Helper function to count character occurrences
+  function getCharCount(str) {
+    const charCount = {};
+    for (const char of str) {
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+    return charCount;
+  }
+
+  // Get character counts for both strings
+  const charCount1 = getCharCount(str1);
+  const charCount2 = getCharCount(str2);
+
+  // Compare character counts
+  for (const char in charCount1) {
+    if (charCount1[char] !== charCount2[char]) {
+      return false;
+    }
+  }
+
+  return true;
+}
